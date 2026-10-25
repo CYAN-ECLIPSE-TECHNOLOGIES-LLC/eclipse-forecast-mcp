@@ -1,0 +1,54 @@
+{
+ "bench": {
+  "bench_verdict": "CERTIFIED(local)",
+  "certified": true,
+  "checks": [
+   "token<->outcome SWAP TRAP: outcomes listed No-first, expensive book on the No token \u2014 mapping follows the VENUE arrays (quote direction proves it)",
+   "liquidity boundary: $999.50 at best -> THIN; exactly $1,000 and $1,000.50 -> FRAGILE",
+   "money_class REAL on every output that carries one; no PLAY anywhere",
+   "edited-fixture criteria flow: position opened pre-edit in shared core state keeps v1; sync names the CRITERIA_CHANGED event",
+   "DISPUTED resolution is first-class on the adapter surface",
+   "circumvention + trading denylist by enumeration; us_trading_surface ABSENT stated",
+   "auth enforced",
+   "schema valid",
+   "no network surface (source-level)",
+   "no secret leak",
+   "sane errors",
+   "process health",
+   "audit completeness (shared ledger chain)",
+   "bench isolation"
+  ],
+  "not_tested": [
+   "Live Gamma / CLOB public reads \u2014 M0 runs against fixtures shaped like the real public API responses behind a transport seam (load_fixtures); the live public-read transport is a later verification step.",
+   "Polymarket US (QCX) data or trading \u2014 a separate CFTC-designated venue with its own chapter (spec 12.1), M2+ phase; Global and US data never blend in one Quote.",
+   "UMA oracle state beyond the fixture set \u2014 dispute windows/finalization tracked as fixture-shaped Resolution records in M0.",
+   "Any trading surface \u2014 absent by design (Grade X for US persons, spec 4.2/8.2); nothing to test because the capability does not exist."
+  ],
+  "scorecard_ref": "test-bench/results/eclipse-forecast-mcp-2026-10-25.json",
+  "status": "CERTIFIED(local) \u2014 Eclipse Bazaar Test Bench 2026-10-25 (scorecard eclipse-forecast-mcp-2026-10-25.json): 13 pass / 1 na / 0 fail over 14 checks incl. bench isolation. M0 data-only scope; live venue reads not_tested per the preserved not_tested list."
+ },
+ "category": "Markets / Prediction-Market Adapters",
+ "created": "2026-10-25",
+ "description": "The Polymarket adapter of the Eclipse Markets suite (Wing B), in M0 data form. Gamma-shaped fixtures normalize into Eclipse Book canonical Instruments with resolution criteria stored verbatim and hash-pinned (a criteria edit re-sync produces a named CRITERIA_CHANGED event; positions keep criteria as of entry), CLOB-shaped books normalize into canonical Books and fee-truth Quotes (all-in cost from the venue's dated fee schedule; stale schedule degrades to FEE_UNVERIFIED), and UMA-shaped resolutions enter the core lifecycle where DISPUTED is a first-class state. Every output carries money_class REAL. The US trading surface is absent by design \u2014 no order, trade, account, or API-key tool exists, and geoblock-circumvention-shaped tool names are refused by name. The forecast is the venue's priced output, never Cyan Eclipse's prediction, and no output carries a probability field.",
+ "icon": "icon-512.png",
+ "name": "Eclipse Forecast MCP",
+ "powered_by": "Cyan Eclipse Technologies",
+ "price_model": "Free local v0.1; family pricing TBD per spec",
+ "repo": null,
+ "slug": "eclipse-forecast-mcp",
+ "status": "In development \u2014 v0.1.0 M0 local build (Polymarket Global data adapter; Gamma/CLOB-shaped fixtures behind a transport seam; CERTIFIED(local) \u2014 Eclipse Bazaar Test Bench 2026-10-25)",
+ "tagline": "The Polymarket adapter: the venue's prices, with their criteria and liquidity attached.",
+ "tools": [
+  "forecast_sync",
+  "market_list",
+  "market_get",
+  "book_get",
+  "quote_get",
+  "resolution_get",
+  "venue_status",
+  "receipt_list"
+ ],
+ "transport": "MCP over stdio (HTTP transport on roadmap)",
+ "vendor": "Cyan Eclipse Technologies",
+ "x402_ready": false
+}
